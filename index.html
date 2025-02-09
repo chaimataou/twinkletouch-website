@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twinkle Touch - Jewelry Shop</title>
+    <!-- Link to External CSS -->
     <link rel="stylesheet" href="twinkletouch.css">
     <style>
         body {
@@ -20,6 +21,7 @@
             color: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border-bottom: 5px solid #FFC300;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         header h1 {
@@ -34,6 +36,7 @@
             font-size: 1.4rem;
             margin-top: 10px;
             font-style: italic;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .shop-section {
@@ -45,6 +48,7 @@
             font-size: 2.5rem;
             color: #4A4A4A;
             margin-bottom: 30px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .products {
@@ -73,6 +77,11 @@
             max-width: 100%;
             border-radius: 15px;
             margin-bottom: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product:hover img {
+            transform: scale(1.05);
         }
 
         .product h3 {
@@ -165,6 +174,38 @@
         footer a:hover {
             color: #FFF8DC;
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -172,8 +213,8 @@
 
 <header>
     <h1>Twinkle Touch</h1>
-    <p>Luxury Jewelry </p>
-    <p> good quality with good prices </p>
+    <p>Luxury Jewelry</p>
+    <p>Good quality with good prices</p>
 </header>
 
 <section class="shop-section">
@@ -222,25 +263,4 @@
 </div>
 
 <footer>
-    <p>&copy; 2025 Twinkle Touch. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-</footer>
-
-<script>
-    // Show the order form with the product name
-    function showForm(productName) {
-        document.getElementById('productName').textContent = productName;
-        document.getElementById('productNameInput').value = productName;
-        document.getElementById('orderForm').style.display = 'flex';
-    }
-
-    // Close the form if clicked outside of the form
-    document.getElementById('orderForm').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
-        }
-    });
-</script>
-
-</body>
-</html>
-
+    <p>&copy; 2025 Twinkle Touch. All Rights Reserved. | <a href
