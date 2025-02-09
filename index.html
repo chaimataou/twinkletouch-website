@@ -103,7 +103,7 @@
             background: #DAA520;
         }
 
-        /* Form Styles */
+        /* Form Modal */
         .order-form {
             display: none;
             background-color: rgba(0, 0, 0, 0.5);
@@ -121,6 +121,8 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
         }
 
         .order-form input {
@@ -225,7 +227,7 @@
         document.getElementById('orderForm').style.display = 'flex';
     }
 
-    // Close the form if needed
+    // Close the form if clicked outside of the form
     document.getElementById('orderForm').addEventListener('click', function(e) {
         if (e.target === this) {
             this.style.display = 'none';
@@ -235,3 +237,4 @@
 
 </body>
 </html>
+
